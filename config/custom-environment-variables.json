@@ -1,0 +1,11 @@
+{
+  "host":"HOSTNAME",
+  "origins":"APP_HOST",
+  "aws": {
+    "endpoint": "AWS_ENDPOINT",
+    "bucket": "AWS_BUCKET",
+    "accessKeyId": "AWS_ACCESS_KEY_ID",
+    "secretAccessKey": "AWS_SECRET_ACCESS_KEY"
+ },
+ "mongodb": "MONGO_URI"
+}

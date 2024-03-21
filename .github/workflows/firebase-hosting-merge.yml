@@ -9,7 +9,10 @@ name: Deploy to Firebase Hosting on merge
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
+     env:
+      MONGO_URI: ${{ secrets.MONGO_URI }}
     steps:
+    run: echo $MONGO_URI
       - uses: actions/checkout@v4
       - run: yarn install && yarn build && yarn start
       - uses: FirebaseExtended/action-hosting-deploy@v0

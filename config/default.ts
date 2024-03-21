@@ -9,14 +9,14 @@ const config = {
     max: 50
   },
   aws: {
-    endpoint: '',
-    bucket: '',
-    accessKeyId: '',
-    secretAccessKey: ''
+    endpoint: process.env.AWS_ENDPOINT,
+    bucket: process.env.AWS_BUCKET,
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
   },
   mongodb: process.env.MONGO_URI,
   authentication: {
-    secret: '',
+    secret: process.env.JWT_SECRET,
     authStrategies: ['jwt', 'local', 'oauth'],
     jwtOptions: {
       header: {

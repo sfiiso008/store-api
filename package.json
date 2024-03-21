@@ -3,7 +3,6 @@
   "description": "",
   "version": "0.0.0",
   "homepage": "",
-  "private": true,
   "keywords": [
     "feathers"
   ],
@@ -11,7 +10,8 @@
   "contributors": [],
   "bugs": {},
   "engines": {
-    "node": ">= 18.17.0"
+    "node": ">= 18.17.0",
+    "npm": ">= 6.0.0"
   },
   "feathers": {
     "language": "ts",
@@ -26,7 +26,8 @@
   },
   "directories": {
     "lib": "src",
-    "test": "test"
+    "test": "test",
+    "config": "config/"
   },
   "files": [
     "lib/client.js",

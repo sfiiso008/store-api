@@ -48,8 +48,6 @@ if (process.env.PUBLIC_FOLDER) {
   app.set('public', process.env.PUBLIC_FOLDER)
 }
 
-console.log(process.env.GITHUB_CLIENT_ID, process.env.GITHUB_CLIENT_SECRET)
-
 if (
   process.env.GITHUB_CLIENT_ID &&
   process.env.GITHUB_CLIENT_SECRET &&
@@ -95,7 +93,6 @@ if (
   })
 }
 
-console.log('app', app.get('authentication'))
 // Load app configuration
 app.configure(configuration(configurationValidator))
 

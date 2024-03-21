@@ -60,7 +60,6 @@
     "@feathersjs/typebox": "^5.0.24",
     "aws-sdk": "^2.1579.0",
     "google-auth-library": "^9.7.0",
-    "googleapis": "^134.0.0",
     "mongodb": "^6.5.0",
     "multer": "^1.4.5-lts.1",
     "winston": "^3.12.0"

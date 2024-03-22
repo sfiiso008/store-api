@@ -37,10 +37,9 @@
   "main": "lib/client",
   "scripts": {
     "dev": "nodemon -x ts-node src/index.ts",
-    "build": "yarn clean && yarn compile",
-    "clean": "shx rm -rf lib",
-		"compile": "npx --node-options='--max-old-space-size=4096' tsc",
+    "build": "yarn compile && yarn start",
     "start": "node lib/",
+    "compile": "shx rm -rf lib && tsc",
     "prettier": "npx prettier \"**/*.ts\" --write",
     "mocha": "cross-env NODE_ENV=test mocha test/ --require ts-node/register --recursive --extension .ts --exit",
     "test": "npm run mocha",

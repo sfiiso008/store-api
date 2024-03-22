@@ -107,6 +107,8 @@ app.use(urlencoded({ extended: true }))
 app.use('/', serveStatic(app.get('public')))
 
 // Configure services and real-time functionality
+console.log('origins', app.get('origins'))
+
 app.configure(rest())
 app.configure(
   socketio({

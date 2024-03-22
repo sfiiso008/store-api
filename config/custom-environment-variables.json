@@ -1,6 +1,6 @@
 {
   "host":"HOSTNAME",
-  "origins":"APP_HOST",
+  "origins":["http://localhost:3000", "https://store-app-five-jet.vercel.app/"],
   "aws": {
     "endpoint": "AWS_ENDPOINT",
     "bucket": "AWS_BUCKET",

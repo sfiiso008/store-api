@@ -1,9 +1,9 @@
 const config = {
-  host: 'localhost',
+  host: process.env.HOST,
   port: 3030,
   public: './public/',
   uploads: './uploads/',
-  origins: ['http://localhost:3000'],
+  origins: process.env.origins,
   paginate: {
     default: 10,
     max: 50

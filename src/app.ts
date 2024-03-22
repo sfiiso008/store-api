@@ -44,6 +44,10 @@ if (
   })
 }
 
+if (process.env.HOST) {
+  app.set('host', process.env.HOST)
+}
+
 if (process.env.PUBLIC_FOLDER) {
   app.set('public', process.env.PUBLIC_FOLDER)
 }

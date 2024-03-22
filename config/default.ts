@@ -3,7 +3,7 @@ const config = {
   port: 3030,
   public: './public/',
   uploads: './uploads/',
-  origins: process.env.ORIGINS,
+  origins: ['https://store-app-five-jet.vercel.app/', 'http://localhost:3000'],
   paginate: {
     default: 10,
     max: 50

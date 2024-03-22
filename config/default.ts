@@ -3,7 +3,7 @@ const config = {
   port: 3030,
   public: './public/',
   uploads: './uploads/',
-  origins: process.env.origins,
+  origins: process.env.ORIGINS,
   paginate: {
     default: 10,
     max: 50

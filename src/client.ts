@@ -4,6 +4,30 @@ import type { TransportConnection, Application } from '@feathersjs/feathers'
 import authenticationClient from '@feathersjs/authentication-client'
 import type { AuthenticationClientOptions } from '@feathersjs/authentication-client'
 
+import { subCategoriesClient } from './services/sub-categories/sub-categories.shared'
+export type {
+  SubCategories,
+  SubCategoriesData,
+  SubCategoriesQuery,
+  SubCategoriesPatch
+} from './services/sub-categories/sub-categories.shared'
+
+import { productsClient } from './services/products/products.shared'
+export type {
+  Products,
+  ProductsData,
+  ProductsQuery,
+  ProductsPatch
+} from './services/products/products.shared'
+
+import { categoriesClient } from './services/categories/categories.shared'
+export type {
+  Categories,
+  CategoriesData,
+  CategoriesQuery,
+  CategoriesPatch
+} from './services/categories/categories.shared'
+
 import { wishlistClient } from './services/wishlist/wishlist.shared'
 export type {
   Wishlist,
@@ -47,5 +71,8 @@ export const createClient = <Configuration = any,>(
   client.configure(userClient)
   client.configure(cartClient)
   client.configure(wishlistClient)
+  client.configure(categoriesClient)
+  client.configure(productsClient)
+  client.configure(subCategoriesClient)
   return client
 }

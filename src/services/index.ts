@@ -1,3 +1,6 @@
+import { subCategories } from './sub-categories/sub-categories'
+import { products } from './products/products'
+import { categories } from './categories/categories'
 import { wishlist } from './wishlist/wishlist'
 import { cart } from './cart/cart'
 import { user } from './users/users'
@@ -7,6 +10,9 @@ import uploads from './uploads/upload.service'
 import type { Application } from '../declarations'
 
 export const services = (app: Application) => {
+  app.configure(subCategories)
+  app.configure(products)
+  app.configure(categories)
   app.configure(wishlist)
   app.configure(cart)
   app.configure(user)

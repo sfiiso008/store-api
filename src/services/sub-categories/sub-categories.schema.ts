@@ -1,5 +1,5 @@
 // // For more information about this file see https://dove.feathersjs.com/guides/cli/service.schemas.html
-import { resolve } from '@feathersjs/schema'
+import { resolve, virtual } from '@feathersjs/schema'
 import { Type, getValidator, querySyntax } from '@feathersjs/typebox'
 import { ObjectIdSchema } from '@feathersjs/typebox'
 import type { Static } from '@feathersjs/typebox'
@@ -13,13 +13,46 @@ export const subCategoriesSchema = Type.Object(
   {
     _id: ObjectIdSchema(),
     name: Type.String(),
-    categoryId: ObjectIdSchema()
+    categoryId: ObjectIdSchema(),
+    products: Type.Array(
+      Type.Object({
+        _id: ObjectIdSchema(),
+        title: Type.String(),
+        price: Type.Integer(),
+        description: Type.String(),
+        images: Type.Array(Type.String()),
+        subCategoryId: ObjectIdSchema()
+      })
+    )
   },
   { $id: 'SubCategories', additionalProperties: false }
 )
 export type SubCategories = Static<typeof subCategoriesSchema>
+
 export const subCategoriesValidator = getValidator(subCategoriesSchema, dataValidator)
-export const subCategoriesResolver = resolve<SubCategories, HookContext<SubCategoriesService>>({})
+
+export const subCategoriesResolver = resolve<SubCategories, HookContext<SubCategoriesService>>({
+  products: virtual(async (subCategory, context) => {
+    const products = await context.app.service('products').find({
+      query: {
+        subCategoryId: subCategory._id
+      }
+    })
+
+    return [
+      ...products.data.map((product) => {
+        return {
+          _id: product._id,
+          title: product.title,
+          price: product.price,
+          description: product.description,
+          images: product.images,
+          subCategoryId: product.subCategoryId
+        }
+      })
+    ]
+  })
+})
 
 export const subCategoriesExternalResolver = resolve<SubCategories, HookContext<SubCategoriesService>>({})
 

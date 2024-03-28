@@ -16,7 +16,7 @@ export const cartSchema = Type.Object(
     items: Type.Array(
       Type.Object({
         quantity: Type.Integer(),
-        productId: Type.Integer(),
+        productId: Type.String(),
         price: Type.Number(),
         itemPicture: Type.String(),
         itemName: Type.String()

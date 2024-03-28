@@ -10,7 +10,7 @@ class RemoveItem {
     this.app = app
   }
 
-  async create(payload: { userId: string; productId: number }): Promise<Cart> {
+  async create(payload: { userId: string; productId: string }): Promise<Cart> {
     const { userId, productId } = payload
 
     // Fetch the cart for the given userId

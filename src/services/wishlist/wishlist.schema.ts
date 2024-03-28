@@ -15,7 +15,7 @@ export const wishlistSchema = Type.Object(
     userId: Type.String(),
     items: Type.Array(
       Type.Object({
-        productId: Type.Integer(),
+        productId: Type.String(),
         price: Type.Number(),
         itemPicture: Type.String(),
         itemName: Type.String()

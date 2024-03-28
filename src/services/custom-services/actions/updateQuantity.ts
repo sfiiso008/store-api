@@ -9,7 +9,7 @@ class GetCart {
     this.app = app
   }
 
-  async create(payload: { userId: string; productId: number; newQuantity: number }) {
+  async create(payload: { userId: string; productId: string; newQuantity: number }) {
     const { userId, productId, newQuantity } = payload
     try {
       const cart = await this.app.service('cart').find({

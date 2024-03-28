@@ -8,7 +8,7 @@ class AddedToWishlist {
     this.app = app
   }
 
-  async create(payload: { userId: string; productId: number }) {
+  async create(payload: { userId: string; productId: string }) {
     const { userId, productId } = payload
 
     const wishListQuery = await this.app.service('wishlist').find({

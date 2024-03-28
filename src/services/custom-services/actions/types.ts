@@ -1,5 +1,5 @@
 export interface IItem {
-  productId: number
+  productId: string
   price: number
   itemPicture: string
   itemName: string

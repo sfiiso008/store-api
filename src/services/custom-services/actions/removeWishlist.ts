@@ -10,7 +10,7 @@ class RemoveItem {
     this.app = app
   }
 
-  async create(payload: { userId: string; productId: number }): Promise<WishList> {
+  async create(payload: { userId: string; productId: string }): Promise<WishList> {
     const { userId, productId } = payload
 
     // Fetch the cart for the given userId

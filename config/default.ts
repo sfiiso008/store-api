@@ -5,7 +5,7 @@ const config = {
   uploads: './uploads/',
   origins: ['http://localhost:3000', 'http://localhost:3001'],
   paginate: {
-    default: 10,
+    default: 25,
     max: 50
   },
   aws: {

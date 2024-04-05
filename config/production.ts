@@ -5,7 +5,7 @@ const config = {
   uploads: './uploads/',
   origins: ['https://store-app-five-jet.vercel.app'],
   paginate: {
-    default: 10,
+    default: 25,
     max: 50
   },
   aws: {
